@@ -34,7 +34,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-brand-navy px-8 py-4 text-lg"
+                className="border-white text-brand-navy bg-white hover:bg-white hover:text-brand-navy px-8 py-4 text-lg"
               >
                 <PlayCircle className="mr-2 h-5 w-5" />
                 View Our Work
