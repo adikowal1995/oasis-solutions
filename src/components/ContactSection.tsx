@@ -167,9 +167,7 @@ const ContactSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-brand-navy to-brand-teal text-white">
-              
-            </Card>
+            
           </div>
         </div>
       </div>
