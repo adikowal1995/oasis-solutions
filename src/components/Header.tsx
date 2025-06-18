@@ -38,7 +38,11 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
+          <Button 
+            variant="outline" 
+            className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+            onClick={() => window.open('https://vt84dvmw.forms.app/influencer-contact-form-1', '_blank')}
+          >
             Get Quote
           </Button>
           <Button className="bg-brand-teal hover:bg-brand-teal-light">
@@ -70,7 +74,11 @@ const Header = () => {
               </a>
             ))}
             <div className="flex flex-col space-y-2 pt-4">
-              <Button variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
+              <Button 
+                variant="outline" 
+                className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+                onClick={() => window.open('https://vt84dvmw.forms.app/influencer-contact-form-1', '_blank')}
+              >
                 Get Quote
               </Button>
               <Button className="bg-brand-teal hover:bg-brand-teal-light">
