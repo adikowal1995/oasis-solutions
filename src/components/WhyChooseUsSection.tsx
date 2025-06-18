@@ -1,45 +1,29 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Globe, 
-  Users, 
-  Zap, 
-  Trophy,
-  MapPin,
-  Languages
-} from "lucide-react";
-
+import { Globe, Users, Zap, Trophy, MapPin, Languages } from "lucide-react";
 const WhyChooseUsSection = () => {
-  const advantages = [
-    {
-      icon: <Globe className="h-12 w-12" />,
-      title: "Regional Expertise",
-      description: "Deep understanding of Middle Eastern markets, regulations, and business culture across GCC and Levant regions.",
-      stats: "8+ Countries Served"
-    },
-    {
-      icon: <Languages className="h-12 w-12" />,
-      title: "Multilingual Team",
-      description: "Native Arabic and English speakers ensuring seamless communication and cultural alignment.",
-      stats: "Arabic & English Native"
-    },
-    {
-      icon: <Zap className="h-12 w-12" />,
-      title: "Rapid Delivery",
-      description: "Agile methodologies and experienced teams enable faster time-to-market without compromising quality.",
-      stats: "30% Faster Delivery"
-    },
-    {
-      icon: <Trophy className="h-12 w-12" />,
-      title: "ISO-Certified Processes",
-      description: "Quality-assured development following international standards and best practices.",
-      stats: "ISO 9001:2015 Certified"
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-white">
+  const advantages = [{
+    icon: <Globe className="h-12 w-12" />,
+    title: "Regional Expertise",
+    description: "Deep understanding of Middle Eastern markets, regulations, and business culture across GCC and Levant regions.",
+    stats: "8+ Countries Served"
+  }, {
+    icon: <Languages className="h-12 w-12" />,
+    title: "Multilingual Team",
+    description: "Native Arabic and English speakers ensuring seamless communication and cultural alignment.",
+    stats: "Arabic & English Native"
+  }, {
+    icon: <Zap className="h-12 w-12" />,
+    title: "Rapid Delivery",
+    description: "Agile methodologies and experienced teams enable faster time-to-market without compromising quality.",
+    stats: "30% Faster Delivery"
+  }, {
+    icon: <Trophy className="h-12 w-12" />,
+    title: "ISO-Certified Processes",
+    description: "Quality-assured development following international standards and best practices.",
+    stats: "ISO 9001:2015 Certified"
+  }];
+  return <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-brand-teal text-white">Why Choose Us</Badge>
@@ -53,8 +37,7 @@ const WhyChooseUsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {advantages.map((advantage, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 border-gray-100">
+          {advantages.map((advantage, index) => <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 border-gray-100">
               <CardContent className="p-8">
                 <div className="text-brand-teal mb-6 flex justify-center">
                   {advantage.icon}
@@ -69,8 +52,7 @@ const WhyChooseUsSection = () => {
                   {advantage.stats}
                 </Badge>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         <div className="bg-gradient-to-r from-brand-navy to-brand-teal rounded-2xl p-8 md:p-12 text-white text-center">
@@ -94,8 +76,6 @@ const WhyChooseUsSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyChooseUsSection;

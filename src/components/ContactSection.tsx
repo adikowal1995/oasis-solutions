@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,9 +8,10 @@ import { Badge } from "@/components/ui/badge";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-
 const ContactSection = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -21,15 +21,14 @@ const ContactSection = () => {
     timeline: "",
     description: ""
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     toast({
       title: "Thank you for your inquiry!",
-      description: "We'll get back to you within 24 hours.",
+      description: "We'll get back to you within 24 hours."
     });
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -41,13 +40,13 @@ const ContactSection = () => {
       description: ""
     });
   };
-
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
   };
-
-  return (
-    <section id="contact" className="py-20 bg-gray-50">
+  return <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-brand-teal text-white">Get In Touch</Badge>
@@ -71,52 +70,29 @@ const ContactSection = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        value={formData.name}
-                        onChange={(e) => handleInputChange('name', e.target.value)}
-                        placeholder="Your full name"
-                        required
-                      />
+                      <Input id="name" value={formData.name} onChange={e => handleInputChange('name', e.target.value)} placeholder="Your full name" required />
                     </div>
                     <div>
                       <Label htmlFor="company">Company</Label>
-                      <Input
-                        id="company"
-                        value={formData.company}
-                        onChange={(e) => handleInputChange('company', e.target.value)}
-                        placeholder="Your company name"
-                      />
+                      <Input id="company" value={formData.company} onChange={e => handleInputChange('company', e.target.value)} placeholder="Your company name" />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="email">Email Address *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => handleInputChange('email', e.target.value)}
-                        placeholder="your.email@company.com"
-                        required
-                      />
+                      <Input id="email" type="email" value={formData.email} onChange={e => handleInputChange('email', e.target.value)} placeholder="your.email@company.com" required />
                     </div>
                     <div>
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        value={formData.phone}
-                        onChange={(e) => handleInputChange('phone', e.target.value)}
-                        placeholder="+971 50 xxx xxxx"
-                      />
+                      <Input id="phone" value={formData.phone} onChange={e => handleInputChange('phone', e.target.value)} placeholder="+971 50 xxx xxxx" />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="budget">Estimated Budget</Label>
-                      <Select onValueChange={(value) => handleInputChange('budget', value)}>
+                      <Select onValueChange={value => handleInputChange('budget', value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
@@ -130,7 +106,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <Label htmlFor="timeline">Preferred Timeline</Label>
-                      <Select onValueChange={(value) => handleInputChange('timeline', value)}>
+                      <Select onValueChange={value => handleInputChange('timeline', value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select timeline" />
                         </SelectTrigger>
@@ -146,21 +122,10 @@ const ContactSection = () => {
 
                   <div>
                     <Label htmlFor="description">Project Description *</Label>
-                    <Textarea
-                      id="description"
-                      value={formData.description}
-                      onChange={(e) => handleInputChange('description', e.target.value)}
-                      placeholder="Tell us about your project requirements, goals, and any specific needs..."
-                      rows={5}
-                      required
-                    />
+                    <Textarea id="description" value={formData.description} onChange={e => handleInputChange('description', e.target.value)} placeholder="Tell us about your project requirements, goals, and any specific needs..." rows={5} required />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full bg-brand-teal hover:bg-brand-teal-light text-white"
-                  >
+                  <Button type="submit" size="lg" className="w-full bg-brand-teal hover:bg-brand-teal-light text-white">
                     Send Inquiry
                   </Button>
                 </form>
@@ -188,16 +153,7 @@ const ContactSection = () => {
                     <div className="text-gray-600">hello@techflow.ae</div>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-brand-teal mt-1" />
-                  <div>
-                    <div className="font-semibold text-brand-navy">Address</div>
-                    <div className="text-gray-600">
-                      Business Bay, Dubai<br />
-                      United Arab Emirates
-                    </div>
-                  </div>
-                </div>
+                
                 <div className="flex items-start space-x-4">
                   <Clock className="h-6 w-6 text-brand-teal mt-1" />
                   <div>
@@ -212,21 +168,11 @@ const ContactSection = () => {
             </Card>
 
             <Card className="bg-gradient-to-br from-brand-navy to-brand-teal text-white">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-4">Need Immediate Support?</h3>
-                <p className="text-gray-200 mb-6">
-                  Our technical team is available 24/7 for urgent support and consultations.
-                </p>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-brand-navy">
-                  Emergency Support
-                </Button>
-              </CardContent>
+              
             </Card>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
