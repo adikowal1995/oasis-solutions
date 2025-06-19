@@ -21,24 +21,56 @@ const ContactSection = () => {
     timeline: "",
     description: ""
   });
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Thank you for your inquiry!",
-      description: "We'll get back to you within 24 hours."
-    });
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.description) {
+      toast({
+        title: "Error",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-    // Reset form
-    setFormData({
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      budget: "",
-      timeline: "",
-      description: ""
-    });
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Error",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      // Here you would typically send the form data to your backend
+      console.log('Form submitted:', formData);
+      
+      toast({
+        title: "Thank you for your inquiry!",
+        description: "We'll get back to you within 24 hours."
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        budget: "",
+        timeline: "",
+        description: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
