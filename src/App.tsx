@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
-const basename = import.meta.env.MODE === 'production' ? '/oasis-solutions' : '/';
+const basename = import.meta.env.MODE === 'production' ? '/new-oasis' : '/';
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
